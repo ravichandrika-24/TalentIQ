@@ -1,0 +1,11 @@
+
+<!doctype html><html><head><title>TalentIQ</title>
+<style>body{font-family:Arial;max-width:1000px;margin:40px auto;padding:20px;background:#f5f7fb;color:#182033}
+.card{background:white;padding:20px;margin:15px 0;border-radius:14px;box-shadow:0 3px 15px #0001}
+a{display:inline-block;padding:10px 14px;background:#182033;color:white;border-radius:8px;text-decoration:none}table{width:100%;border-collapse:collapse}td,th{padding:9px;border-bottom:1px solid #ddd;text-align:left}</style>
+</head><body><h1>TalentIQ</h1><p>Intelligent Recruitment & Candidate Analytics</p>
+<div class=card><h2>Candidate Ranking</h2><table><tr><th>Rank</th><th>Name</th><th>Experience</th><th>Skills</th></tr>
+{% for r in rankings %}<tr><td>{{r[3]}}</td><td>{{r[0]}}</td><td>{{r[1]}} yrs</td><td>{{r[2]}}</td></tr>{% endfor %}</table></div>
+<div class=card><h2>Top Skills</h2>{% for s in skills %}<b>{{s[0]}}</b>: {{s[1]}} candidates<br>{% endfor %}</div>
+<div class=card><h2>Jobs</h2>{% for j in jobs %}<p><b>{{j[0]}}</b> — {{j[1]}} applications, {{j[2]}} hired<br><a href="/match/{{loop.index}}">Match Candidates</a></p>{% endfor %}</div>
+</body></html>
