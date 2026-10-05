@@ -9,7 +9,7 @@ from flask import (
     redirect,
     url_for,
     session,
-    render_template_string,
+    render_template_string
     flash
 )
 
